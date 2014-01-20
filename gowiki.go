@@ -665,7 +665,7 @@ func init() {
 	if err != nil {
 		log.Fatal("Error: ", err)
 	}
-	dbm = modl.NewDbMap(&db.DB, modl.SqliteDialect{})
+	dbm = modl.NewDbMap(db.DB, modl.SqliteDialect{})
 	dbm.AddTable(User{}, "user").SetKeys(true, "id")
 	dbm.AddTable(Page{}, "page").SetKeys(false, "url")
 	dbm.AddTable(Config{}, "config").SetKeys(false, "key")
